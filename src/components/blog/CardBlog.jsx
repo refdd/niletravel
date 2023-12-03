@@ -47,7 +47,7 @@ function CardBlog({
               dangerouslySetInnerHTML={{
                 __html: description ? description.substring(0, 120) : "",
               }}
-              className="text-[#777] text-left leading-6 mb-3 pb-2 border-b border-dashed border-[#f1f1f1f1] "
+              className="text-[#777] text-left leading-6 mb-3 pb-2 border-b border-dashed border-[#f1f1f1f1] textEditor "
             ></div>
           </div>
           {/*  */}

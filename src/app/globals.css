@@ -26,3 +26,17 @@
 
   width: 100%;
 }
+.textEditor ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+.textEditor a {
+  text-decoration: underline !important;
+  color: rgb(34, 7, 153) !important;
+}
+.textEditor h2,
+.textEditor h3,
+.textEditor h4 {
+  color: rgb(0, 0, 0) !important;
+  font-weight: bold;
+}

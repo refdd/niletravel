@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 const SeeMoreButton = dynamic(() => import("../buttons/SeeMoreButton"));
 const TapsSelected = dynamic(() => import("./TapsSelected"));
-const ToursSlier = dynamic(() => import("./ToursSlier"));
+const ToursSlier = dynamic(() => import("./ToursSlider"));
 function TapsPackagesTour({ allcategories, slugType }) {
   //   console.log(allcategories);
   const [activeIndex, setActiveIndex] = useState(0);

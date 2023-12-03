@@ -7,7 +7,7 @@ const ContectFooter = dynamic(() => import("./ContectFooter"));
 function Footer() {
   return (
     <footer>
-      <div className=" relative flex flex-col gap-7 bg-[#17233e] ">
+      <div className=" relative flex flex-col gap-7 bg-[#17233e]  mt-10">
         <div
           style={{ backgroundImage: `url(${bg.src})` }}
           className="  w-full h-24 bg-contain bg-top  mt-[-28px] bg-repeat-x z-10"

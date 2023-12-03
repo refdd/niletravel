@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "api.nilecruisez.com",
       },
+      {
+        protocol: "https",
+        hostname: "www.nilecruisez.com",
+      },
     ],
   },
 };

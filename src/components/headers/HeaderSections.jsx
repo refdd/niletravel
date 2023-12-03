@@ -12,7 +12,10 @@ function HeaderSections({ title, partOne, partTwo, decs }) {
         {partOne} <span className="text-[#029e9d]"> {partTwo}</span>{" "}
       </h2>
       <div className="text-center text-bsSecondary">
-        <div dangerouslySetInnerHTML={{ __html: decs }} />
+        <div
+          dangerouslySetInnerHTML={{ __html: decs }}
+          className="textEditor"
+        />
       </div>
     </div>
   );

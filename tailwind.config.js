@@ -11,7 +11,7 @@ module.exports = {
         play: ["var(--play)"],
       },
       colors: {
-        bsPrimary: "#009688",
+        bsPrimary: "#029e9d",
         bsSecondary: "#6c757d",
         bsSuccess: "#198754",
         bsInfo: "#0dcaf0",

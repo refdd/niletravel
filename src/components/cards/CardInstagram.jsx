@@ -6,8 +6,8 @@ function CardInstagram({ imgSrc }) {
     <div>
       <div className="relative w-full h-[150px] rounded-[10px] overflow-hidden">
         <Image
-          alt={CardInstagram}
-          title={CardInstagram}
+          alt={"CardInstagram"}
+          title={"CardInstagram"}
           src={imgSrc}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
