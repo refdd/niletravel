@@ -2,7 +2,7 @@ import React from "react";
 async function MainHeader() {
   return (
     <div className="">
-      <div className="relative  w-full h-[224px]  md:h-[80vh]  ">
+      <div className="relative  w-full h-[100vh]  md:h-[80vh]  ">
         <video
           className=" w-full h-full object-cover"
           src={"assets/slidervideo.mp4"}

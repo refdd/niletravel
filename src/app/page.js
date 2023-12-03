@@ -20,7 +20,6 @@ function HomePage() {
   return (
     <div>
       <MainHeader />
-      <SearchSection />
       <Suspense fallback={<>...</>}>
         <RowsPackage />
         <RowsOffers />
