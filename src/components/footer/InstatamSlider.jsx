@@ -3,8 +3,6 @@ import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-import dynamic from "next/dynamic";
-const CardInstagram = dynamic(() => import("../cards/CardInstagram"));
 import instgramImage1 from "../../../public/assets/images/Nile Cruises  7.webp";
 import instgramImage2 from "../../../public/assets/images/Nile Cruises 6.webp";
 import instgramImage3 from "../../../public/assets/images/Nile Cruises 5.webp";
@@ -13,6 +11,7 @@ import instgramImage5 from "../../../public/assets/images/Nile Cruises 3.webp";
 import instgramImage6 from "../../../public/assets/images/Nile Cruises 2.webp";
 import instgramImage7 from "../../../public/assets/images/Nile Cruises 1 .webp";
 import instgramImage8 from "../../../public/assets/images/Nile Cruises 8.webp";
+import CardInstagram from "../cards/CardInstagram";
 function ToursSlider() {
   return (
     <div className=" container mx-0 px-4 mt-5">

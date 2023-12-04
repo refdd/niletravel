@@ -1,9 +1,9 @@
 import React from "react";
 import bg from "../../../public/assets/images/shape8.png";
-import dynamic from "next/dynamic";
-const InstatamSlider = dynamic(() => import("./InstatamSlider"));
-const InstagramButton = dynamic(() => import("../buttons/InstagramButton"));
-const ContectFooter = dynamic(() => import("./ContectFooter"));
+import InstagramButton from "../buttons/InstagramButton";
+import ContectFooter from "./ContectFooter";
+import InstatamSlider from "./InstatamSlider";
+
 function Footer() {
   return (
     <footer>

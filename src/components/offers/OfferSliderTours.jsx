@@ -3,8 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-import dynamic from "next/dynamic";
-const CardOfferTour = dynamic(() => import("../cards/CardOfferTour"));
+import CardOfferTour from "../cards/CardOfferTour";
 
 function ToursSlider({ toursData }) {
   //   console.log(toursData);
