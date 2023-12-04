@@ -21,7 +21,7 @@ function HomePage() {
   return (
     <div>
       <MainHeader />
-      <SearchSection />
+      {/* <SearchSection /> */}
       <RowsPackage />
       <Suspense fallback={<>...</>}>
         <RowsOffers />
