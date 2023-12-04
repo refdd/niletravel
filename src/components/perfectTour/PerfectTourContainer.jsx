@@ -4,7 +4,8 @@ import { TbHandClick } from "react-icons/tb";
 import { FiEdit } from "react-icons/fi";
 import { GiPayMoney } from "react-icons/gi";
 import { MdOutlineSupportAgent } from "react-icons/md";
-const CardPerfectTour = dynamic(() => import("../cards/CardPerfectTour"));
+import CardPerfectTour from "../cards/CardPerfectTour";
+
 function PerfectTourContainer() {
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-4">

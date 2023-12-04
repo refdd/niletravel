@@ -1,8 +1,9 @@
 import React from "react";
+
 async function MainHeader() {
   return (
     <div className="">
-      <div className="relative  w-full h-[100vh]  md:h-[80vh]  ">
+      <div className="relative  w-full h-[224px]  md:h-[100vh]  ">
         <video
           className=" w-full h-full object-cover"
           src={"assets/slidervideo.mp4"}
@@ -11,7 +12,14 @@ async function MainHeader() {
           muted
         />
         {/* layout */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e]  "></div>
+        <div
+          className="absolute top-0 left-0 h-full w-full "
+          style={{
+            background:
+              "linear-gradient(270deg, rgba(5, 16, 54, 0.5) 0%, #3685fb33 72.43%)",
+            opacity: 0.85,
+          }}
+        ></div>
       </div>
     </div>
   );

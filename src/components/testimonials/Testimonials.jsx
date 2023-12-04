@@ -1,7 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
-const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
-const RowReviews = dynamic(() => import("./RowReviews"));
+import HeaderSections from "../headers/HeaderSections";
+import RowReviews from "./RowReviews";
 
 function Testimonials() {
   return (
