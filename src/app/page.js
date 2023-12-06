@@ -1,39 +1,46 @@
 import MainHeader from "@/components/headers/MainHeader";
-
+import SearchSection from "@/components/search/SearchSection";
 import React, { Suspense } from "react";
-
-import RowsPackage from "@/components/tours/RowsPackage";
-import RowsOffers from "@/components/offers/RowsOffers";
-import FindPerfectTour from "@/components/perfectTour/FindPerfectTour";
-import Testimonials from "@/components/testimonials/Testimonials";
-import RowBlog from "@/components/blog/RowBlog";
-import ExploreSection from "@/components/explore/ExploreSection";
-import OurPartners from "@/components/partners/OurPartners";
-import FaqSection from "@/components/FaqSection/FaqSection";
-
-// const RowBlog = dynamic(() => import("@/components/blog/RowBlog"));
-// // const RowsPackage = dynamic(() => import("@/components/tours/RowsPackage"));
-// const RowsOffers = dynamic(() => import("@/components/offers/RowsOffers"));
-// const Testimonials = dynamic(() =>
-//   import("@/components/testimonials/Testimonials")
-// );
-// const FindPerfectTour = dynamic(() =>
-//   import("@/components/perfectTour/FindPerfectTour")
-// );
+import dynamic from "next/dynamic";
+const ExploreSection = dynamic(() =>
+  import("@/components/explore/ExploreSection")
+);
+const FaqSection = dynamic(() => import("@/components/FaqSection/FaqSection"), {
+  ssr: false,
+});
+const OurPartners = dynamic(() => import("@/components/partners/OurPartners"), {
+  ssr: false,
+});
+const RowBlog = dynamic(() => import("@/components/blog/RowBlog"), {
+  ssr: false,
+});
+const RowsPackage = dynamic(() => import("@/components/tours/RowsPackage"), {
+  ssr: false,
+});
+const RowsOffers = dynamic(() => import("@/components/offers/RowsOffers"), {
+  ssr: false,
+});
+const Testimonials = dynamic(() =>
+  import("@/components/testimonials/Testimonials")
+);
+const FindPerfectTour = dynamic(() =>
+  import("@/components/perfectTour/FindPerfectTour")
+);
 function HomePage() {
   return (
     <div>
       <MainHeader />
       {/* <SearchSection /> */}
-      <RowsPackage />
-      <RowsOffers />
-      <FindPerfectTour />
-      <Testimonials />
-      <RowBlog />
-
-      <ExploreSection />
-      <OurPartners />
-      <FaqSection />
+      <Suspense fallback={<div>...</div>}>
+        <RowsPackage />
+        <RowsOffers />
+        <FindPerfectTour />
+        <Testimonials />
+        <RowBlog />
+        <ExploreSection />
+        <OurPartners />
+        <FaqSection />
+      </Suspense>
     </div>
   );
 }

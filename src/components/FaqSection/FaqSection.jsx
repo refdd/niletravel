@@ -1,8 +1,8 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { getData } from "../../../utils/featchApi";
-import HeaderSections from "../headers/HeaderSections";
-import AccordionFAQ from "./AccordionFAQ";
-
+const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
+const AccordionFAQ = dynamic(() => import("./AccordionFAQ"));
 async function FaqSection() {
   const faqs = await getData("/faqs?limit=6");
 

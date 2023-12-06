@@ -1,8 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import ReviewsSlider from "./ReviewsSlider";
-import ImageReviews from "./ImageReviews";
-
+const ImageReviews = dynamic(() => import("./ImageReviews"));
+const ReviewsSlider = dynamic(() => import("./ReviewsSlider"));
 function RowReviews() {
   return (
     <div>

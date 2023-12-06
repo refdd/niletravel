@@ -1,8 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import ExpolorContent from "./ExpolorContent";
-import ExpolorVideo from "./ExpolorVideo";
-
+const ExpolorContent = dynamic(() => import("./ExpolorContent"));
+const ExpolorVideo = dynamic(() => import("./ExpolorVideo"));
 function ExploreSection() {
   return (
     <div className=" container mx-auto mt-20 px-4 py-14 bg-[#fff]">

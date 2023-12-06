@@ -10,7 +10,6 @@ const ListMenuBar = dynamic(() => import("./ListMenuBar"));
 
 function NavBar() {
   const [menuBar, setMenuBar] = useState(false);
-
   const handelMenubar = () => {
     setMenuBar(!menuBar);
   };

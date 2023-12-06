@@ -3,8 +3,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import expolorImage from "../../../public/assets/images/test.webp";
 import { AiFillPlayCircle } from "react-icons/ai";
-import VideoExplor from "./VideoExplor";
-
+import dynamic from "next/dynamic";
+const VideoExplor = dynamic(() => import("./VideoExplor"));
 function ExpolorVideo() {
   const [showvideo, setShowvideo] = useState(false);
 

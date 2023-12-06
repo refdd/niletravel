@@ -1,9 +1,9 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { getData } from "../../../utils/featchApi";
-import HeaderSections from "../headers/HeaderSections";
-import PartnersSlider from "./PartnersSlider";
 
+const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
+const PartnersSlider = dynamic(() => import("./PartnersSlider"));
 async function OurPartners() {
   const partners = await getData("/partners");
 
