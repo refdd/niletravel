@@ -6,7 +6,7 @@ import HeaderSections from "../headers/HeaderSections";
 import BlogSlider from "./BlogSlider";
 
 async function RowBlog() {
-  const posts = await getData("/posts?limit=6");
+  const posts = await getData("/posts?limit=5");
 
   return (
     <div className=" container mx-auto mt-20 px-4">
