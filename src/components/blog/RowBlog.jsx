@@ -2,9 +2,8 @@ import React from "react";
 import dynamic from "next/dynamic";
 import { getData } from "../../../utils/featchApi";
 import SeeMoreButton from "../buttons/SeeMoreButton";
-import HeaderSections from "../headers/HeaderSections";
-import BlogSlider from "./BlogSlider";
-
+const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
+const BlogSlider = dynamic(() => import("./BlogSlider"));
 async function RowBlog() {
   const posts = await getData("/posts?limit=5");
 

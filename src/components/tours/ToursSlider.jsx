@@ -4,8 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import dynamic from "next/dynamic";
-import CardTour from "../cards/CardTour";
-
+const CardTour = dynamic(() => import("../cards/CardTour"));
 function ToursSlider({ toursData, slugType }) {
   //   console.log(toursData);
   return (

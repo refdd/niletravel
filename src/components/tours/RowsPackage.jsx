@@ -1,9 +1,8 @@
 import React from "react";
 import { getData } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
-import HeaderSections from "../headers/HeaderSections";
-import TapsPackagesTour from "./TapsPackagesTour";
-
+const TapsPackagesTour = dynamic(() => import("./TapsPackagesTour"));
+const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
 async function RowsPackage() {
   const types = await getData("/types");
   //   console.log(types?.data[0]);

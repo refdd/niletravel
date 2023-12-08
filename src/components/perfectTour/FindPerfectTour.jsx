@@ -1,8 +1,7 @@
 import React from "react";
 import dynamic from "next/dynamic";
-import HeaderSections from "../headers/HeaderSections";
-import PerfectTourContainer from "./PerfectTourContainer";
-
+const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
+const PerfectTourContainer = dynamic(() => import("./PerfectTourContainer"));
 function FindPerfectTour() {
   return (
     <div className=" container mx-auto mt-20 px-4">

@@ -28,16 +28,18 @@ function HomePage() {
   return (
     <div>
       <MainHeader />
-      {/* <SearchSection /> */}
-      {/* <RowsPackage /> */}
-      {/* <RowsOffers /> */}
-      <FindPerfectTour />
-      <Testimonials />
-      <RowBlog />
+      <Suspense fallbac={<>-----------</>}>
+        {/* <SearchSection /> */}
+        {/* <RowsPackage /> */}
+        {/* <RowsOffers /> */}
+        <FindPerfectTour />
+        <Testimonials />
+        <RowBlog />
 
-      <ExploreSection />
-      <OurPartners />
-      <FaqSection />
+        <ExploreSection />
+        <OurPartners />
+        <FaqSection />
+      </Suspense>
     </div>
   );
 }

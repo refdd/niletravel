@@ -1,9 +1,8 @@
 import React from "react";
 import { getData } from "../../../utils/featchApi";
-
-import HeaderSections from "../headers/HeaderSections";
-import OfferSliderTours from "./OfferSliderTours";
-
+import dynamic from "next/dynamic";
+const OfferSliderTours = dynamic(() => import("./OfferSliderTours"));
+const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
 async function RowsOffers() {
   const tours = await getData("/tours");
 
