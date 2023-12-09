@@ -15,8 +15,8 @@ const ExploreSection = dynamic(() =>
 );
 const OurPartners = dynamic(() => import("@/components/partners/OurPartners"));
 const FaqSection = dynamic(() => import("@/components/FaqSection/FaqSection"));
-const RowBlog = dynamic(() => import("@/components/blog/RowBlog"));
-// const RowsPackage = dynamic(() => import("@/components/tours/RowsPackage"));
+// const RowBlog = dynamic(() => import("@/components/blog/RowBlog"));
+const RowsPackage = dynamic(() => import("@/components/tours/RowsPackage"));
 // const RowsOffers = dynamic(() => import("@/components/offers/RowsOffers"));
 const Testimonials = dynamic(() =>
   import("@/components/testimonials/Testimonials")
@@ -30,11 +30,11 @@ function HomePage() {
       <MainHeader />
       <Suspense fallbac={<>-----------</>}>
         {/* <SearchSection /> */}
-        {/* <RowsPackage /> */}
+        <RowsPackage />
         {/* <RowsOffers /> */}
         <FindPerfectTour />
         <Testimonials />
-        <RowBlog />
+        {/* <RowBlog /> */}
 
         <ExploreSection />
         <OurPartners />
