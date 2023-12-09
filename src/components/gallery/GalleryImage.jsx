@@ -12,8 +12,8 @@ function GalleryImage({ imgSrc, metaTitle }) {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         priority
         quality={60}
-        // placeholder="blur"
-        // blurDataURL={modifiedImageUrl}
+        placeholder="blur"
+        blurDataURL={imgSrc}
         className="rounded-lg object-cover"
       />
     </div>
