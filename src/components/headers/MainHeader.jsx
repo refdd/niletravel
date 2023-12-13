@@ -4,7 +4,7 @@ import Image from "next/image";
 async function MainHeader() {
   return (
     <div className="">
-      <div className="relative  w-full pt-40 pb-48 md:h-[80vh] md:pt-[235px]">
+      <div className="relative  w-full pt-80 pb-96 md:h-[80vh] md:pt-[235px]">
         <Image
           alt="tourImage"
           src={bg}
