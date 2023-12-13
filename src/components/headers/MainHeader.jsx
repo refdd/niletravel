@@ -11,7 +11,7 @@ async function MainHeader() {
           muted
         />
         {/* layout */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e]  "></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e] "></div>
       </div>
     </div>
   );

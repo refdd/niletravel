@@ -6,7 +6,7 @@ import dynamic from "next/dynamic";
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
-// const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
+const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 const ToursSlider = dynamic(() => import("@/components/tours/ToursSlider"));
 const OverViews = dynamic(() => import("@/components/singelTour/OverViews"));
 const HeaderSingle = dynamic(() => import("@/components/headers/HeaderSingle"));
@@ -36,7 +36,9 @@ async function DestinationPage() {
               excluded={egyptPage?.data?.excluded}
             />
           </div>
-          <div className="  md:col-span-2">{/* <FormInquery /> */}</div>
+          <div className="  md:col-span-2">
+            <FormInquery />
+          </div>
         </div>
         {/* related tour */}
         <div className="pt-20">

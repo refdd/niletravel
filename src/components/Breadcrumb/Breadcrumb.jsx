@@ -14,8 +14,8 @@ function Breadcrumb({ listSlug, slug, pageWithHeader }) {
           <div className="w-2 h-2 bg-white rounded-full"></div>
         </li>
         <li className="text-white md:hover:text-bsPrimary transition-all  cursor-pointer text-2xl ">
-          <Link href={`/${listSlug.slug}`}>
-            <span>{listSlug.title}</span>
+          <Link href={`/${listSlug?.slug}`}>
+            <span>{listSlug?.title}</span>
           </Link>
         </li>
         <li className="text-white md:hover:text-bsPrimary transition-all  cursor-pointer text-2xl ">
