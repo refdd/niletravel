@@ -31,19 +31,8 @@ async function HomePage() {
   return (
     <div>
       <MainHeader />
-      <Suspense fallbac={<>-----------</>}>
+      <Suspense fallback={<>-----------</>}>
         {/* <SearchSection /> */}
-        <div className="pt-20">
-          <HeaderSections
-            title={""}
-            decs={
-              "Best-Selected Egypt Tour Packages. Choose from wide range of Egypt Travel Packages & get the chance to experience all that Egypt has to offer. Book Today!"
-            }
-            partOne={"Egypt Tour "}
-            partTwo={"Packages"}
-          />
-          <ToursSlider toursData={tours?.data} slugType={""} />
-        </div>
         <div className="pt-20">
           <HeaderSections
             title={""}
