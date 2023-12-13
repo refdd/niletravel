@@ -30,7 +30,7 @@ function HomePage() {
       <MainHeader />
       <Suspense fallbac={<>-----------</>}>
         {/* <SearchSection /> */}
-        <RowsPackage />
+        {/* <RowsPackage /> */}
         {/* <RowsOffers /> */}
         <FindPerfectTour />
         <Testimonials />
