@@ -1,31 +1,17 @@
 import React from "react";
-import bg from "../../../public/assets/images/bg.webp";
-import Image from "next/image";
 async function MainHeader() {
   return (
     <div className="">
-      <div className="relative  w-full pt-80 pb-96 md:h-[80vh] md:pt-[235px]">
-        <Image
-          alt="tourImage"
-          src={bg}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
-          priority
-          quality={60}
-          // placeholder="blur"
-          // blurDataURL={modifiedImageUrl}
-          className=" object-cover"
+      <div className="relative  w-full h-[90vh]  md:h-[80vh]  ">
+        <video
+          className=" w-full h-full object-cover"
+          src={"assets/slidervideo.mp4"}
+          autoPlay
+          loop
+          muted
         />
         {/* layout */}
-        <div
-          className="absolute top-0 left-0 h-full w-full "
-          style={{
-            background:
-              "linear-gradient(270deg, rgba(5, 16, 54, 0.5) 0%, #051036 72.43%)",
-            opacity: 0.85,
-          }}
-        ></div>
-        {/* content */}
+        <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e]  "></div>
       </div>
     </div>
   );
