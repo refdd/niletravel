@@ -1,38 +1,13 @@
-"use client";
-import React, { useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Autoplay } from "swiper/modules";
-import dynamic from "next/dynamic";
+import React from "react";
+
 import CardTour from "../cards/CardTour";
 function ToursSlider({ toursData, slugType }) {
   //   console.log(toursData);
   return (
     <div className="mt-5">
-      {" "}
-      <Swiper
-        autoplay={{
-          disableOnInteraction: false,
-        }}
-        breakpoints={{
-          640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-          1024: {
-            slidesPerView: 4,
-            spaceBetween: 20,
-          },
-        }}
-        modules={[Autoplay]}
-        className="mySwiper !pb-10"
-      >
-        {toursData?.map((item) => (
-          <SwiperSlide key={item?.id}>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-7 mb-10">
+        {toursData?.slice(0, 4)?.map((item) => (
+          <div key={item?.id}>
             <CardTour
               imgSrc={item?.image}
               slug={item?.slug}
@@ -43,9 +18,9 @@ function ToursSlider({ toursData, slugType }) {
               price={item?.start_price}
               description={item?.overview?.substring(0, 120)}
             />
-          </SwiperSlide>
+          </div>
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 }
