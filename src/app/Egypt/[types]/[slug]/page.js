@@ -3,7 +3,8 @@ import { getData } from "../../../../../utils/featchApi";
 import dynamic from "next/dynamic";
 import HeaderSingle from "@/components/headers/HeaderSingle";
 import SingelGallery from "@/components/gallery/SingelGallery";
-import OverViews from "@/components/singelTour/OverViews";
+const Itinerary = dynamic(() => import("@/components/singelTour/Itinerary"));
+const HighLights = dynamic(() => import("@/components/singelTour/HighLights"));
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
@@ -11,8 +12,18 @@ const ExploreSection = dynamic(() =>
 
 async function singelTour({ params: { slug } }) {
   const singletour = await getData(`/tours/${slug}`);
-  const { title, destinations, gallery, description, included, excluded } =
-    singletour?.data;
+  const {
+    title,
+    destinations,
+    gallery,
+    description,
+    included,
+    excluded,
+    run,
+    type,
+    duration,
+    itineraries,
+  } = singletour?.data;
   return (
     <div>
       <div className="container mx-auto px-4  md:px-10">
@@ -24,11 +35,17 @@ async function singelTour({ params: { slug } }) {
               reviews={"(1,186 Recensioni)"}
             />
             <SingelGallery gallery={gallery} />
-            <OverViews
+
+            <HighLights
               description={description}
               included={included}
               excluded={excluded}
+              run={run}
+              type={type}
+              duration={duration}
+              destinations={destinations}
             />
+            <Itinerary itinerariesDays={itineraries} />
           </div>
           <div className="col-span-2">
             <FormInquery />
