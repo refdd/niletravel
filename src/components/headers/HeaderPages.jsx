@@ -8,7 +8,7 @@ function HeaderPages({ typeList, bgtour, listSlug, singleSlug }) {
   return (
     <div
       //   style={{ backgroundImage: `url(${bg.src})` }}
-      className="relative w-full h-[400px] md:h-[700px]"
+      className="relative w-full h-[700px] md:h-[700px]"
     >
       <Image
         alt={"image header pages"}
@@ -17,7 +17,7 @@ function HeaderPages({ typeList, bgtour, listSlug, singleSlug }) {
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
         priority
-        // placeholder="blur"
+        placeholder="blur"
         // blurDataURL={modifiedImageUrl}
         className=""
       />

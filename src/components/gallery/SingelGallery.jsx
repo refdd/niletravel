@@ -14,9 +14,13 @@ function SingelGallery({ gallery }) {
         modules={[Navigation]}
         className="singileGallery "
       >
-        {gallery?.map((item) => (
+        {gallery?.map((item, index) => (
           <SwiperSlide key={item.id}>
-            <GalleryImage imgSrc={item.image} metaTitle={item.meta_title} />
+            <GalleryImage
+              imgSrc={item.image}
+              metaTitle={item.meta_title}
+              galleryIndex={index}
+            />
           </SwiperSlide>
         ))}
       </Swiper>

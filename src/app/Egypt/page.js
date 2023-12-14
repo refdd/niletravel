@@ -1,5 +1,5 @@
 import HeaderPages from "@/components/headers/HeaderPages";
-import React from "react";
+import React, { Suspense } from "react";
 import SingelGallery from "@/components/gallery/SingelGallery";
 import { getData } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
@@ -37,7 +37,9 @@ async function DestinationPage() {
             />
           </div>
           <div className="  md:col-span-2">
-            <FormInquery />
+            <Suspense fallback={<>-----------</>}>
+              <FormInquery />
+            </Suspense>
           </div>
         </div>
         {/* related tour */}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { getData } from "../../../../../utils/featchApi";
 import dynamic from "next/dynamic";
 import HeaderSingle from "@/components/headers/HeaderSingle";
@@ -48,7 +48,9 @@ async function singelTour({ params: { slug } }) {
             <Itinerary itinerariesDays={itineraries} />
           </div>
           <div className="col-span-2">
-            <FormInquery />
+            <Suspense fallback={<>-----------</>}>
+              <FormInquery />
+            </Suspense>
           </div>
         </div>
         <ExploreSection />
