@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import dynamic from "next/dynamic";
 const Form = dynamic(() => import("./Form"));
 function FormInquery() {
@@ -12,7 +12,9 @@ function FormInquery() {
           Check Availability
         </h3>
       </div>
-      <Form />
+      <Suspense fallback={<>-----------</>}>
+        <Form />
+      </Suspense>
     </div>
   );
 }
