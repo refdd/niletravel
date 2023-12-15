@@ -18,13 +18,9 @@ function HomePage() {
     <div>
       <MainHeader />
       <Suspense fallback={<>-----------</>}>
-        {/* <SearchSection /> */}
         <RowsPackage />
-        {/* <RowsOffers /> */}
         <FindPerfectTour />
         <Testimonials />
-        {/* <RowBlog /> */}
-
         <ExploreSection />
         <OurPartners />
         <FaqSection />
