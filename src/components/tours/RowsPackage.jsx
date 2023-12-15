@@ -18,7 +18,6 @@ async function RowsPackage() {
           />
           <TapsPackagesTour
             allcategories={type.categories}
-            // id={type.id}
             slugType={type.slug}
           />
         </section>
