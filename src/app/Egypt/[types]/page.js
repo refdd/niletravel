@@ -6,6 +6,14 @@ const CardListContainer = dynamic(() =>
   import("@/components/tours/CardListContainer")
 );
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
+export async function generateMetadata({ params: { types }, searchParams }) {
+  const pages = await getData(`/types`);
+  const dataPage = pages?.data.find((page) => page.slug == types);
+  return {
+    title: dataPage?.meta_title,
+    description: dataPage?.meta_description,
+  };
+}
 async function ListTour({ params: { types } }) {
   const tours = await getData(`/tours?site_map_frequency=${types}`);
   // console.log(tours?.data);
