@@ -1,20 +1,28 @@
 import React from "react";
 import { getData } from "../../../utils/featchApi";
 import dynamic from "next/dynamic";
-const ToursSlider = dynamic(() => import("./ToursSlider"));
+const TapsPackagesTour = dynamic(() => import("./TapsPackagesTour"));
 const HeaderSections = dynamic(() => import("../headers/HeaderSections"));
 async function RowsPackage() {
-  const tours = await getData("/tours?limit=4");
+  const types = await getData("/types");
   //   console.log(types?.data[0]);
   return (
     <div className="container mx-auto px-4">
-      <HeaderSections
-        title={""}
-        decs={"type.description"}
-        partOne={""}
-        partTwo={"type.title"}
-      />
-      <ToursSlider toursData={tours?.data} />
+      {types?.data?.map((type) => (
+        <section key={type.id} className=" pt-20  ">
+          <HeaderSections
+            title={""}
+            decs={type.description}
+            partOne={""}
+            partTwo={type.title}
+          />
+          <TapsPackagesTour
+            allcategories={type.categories}
+            // id={type.id}
+            slugType={type.slug}
+          />
+        </section>
+      ))}
     </div>
   );
 }
