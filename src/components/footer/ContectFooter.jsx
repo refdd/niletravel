@@ -26,19 +26,16 @@ function ContectFooter() {
             />
           </div>
         </div>
-        <p className="text-sm text-white capitalize font-playfair">
+        <p className="text-sm text-white capitalize ">
           Around Egypt Tours is a young innovative travel company yet matured
           and experienced. Founded in 2005, Around Egypt Tours has made a
           considerable impact on the Egyptian tourism sector by promoting Egypt
           as one of the fascinating destinations in the world.
         </p>
 
-        <h6 className="text-xl text-white font-playfair  ">
+        <h6 className="text-xl text-white   ">
           {" "}
-          <span className="font-bold font-playfair ">
-            {" "}
-            An active member in:
-          </span>{" "}
+          <span className="font-bold  "> An active member in:</span>{" "}
           <p className="text-sm">
             The Egyptian Travel Agent Association “ETAA”
           </p>
@@ -55,42 +52,41 @@ function ContectFooter() {
             The International Organization for E - Tourism “ IOET”{" "}
           </p>
         </h6>
-        <h6 className="text-xl text-white font-playfair  ">
+        <h6 className="text-xl text-white   ">
           {" "}
-          <span className="font-bold font-playfair "> Email:</span>{" "}
-          Sales@nilecruisez.com
+          <span className="font-bold  "> Email:</span> Sales@nilecruisez.com
         </h6>
       </div>
       <div className="  flex flex-col  items-start pl-4 gap-4 col-auto lg:col-start-5 lg:col-end-7">
         <ul className="flex flex-col gap-4">
           <li>
-            <h5 className="relative font-playfair capitalize text-2xl text-white font-bold ">
+            <h5 className="relative  capitalize text-2xl text-white font-bold ">
               Quick Link
               <span className=" absolute bottom-[-5px] left-0 h-1 w-[80%] bg-white"></span>
             </h5>
           </li>
 
-          <li className="text-xl text-white font-playfair transition-all ease-in-out   hover:text-[#029e9d]">
+          <li className="text-xl text-white  transition-all ease-in-out   hover:text-[#029e9d]">
             <Link href={"/AboutUs"}>
               <span> About Us</span>
             </Link>
           </li>
-          <li className="text-xl text-white font-playfair transition-all ease-in-out   hover:text-[#029e9d]">
+          <li className="text-xl text-white  transition-all ease-in-out   hover:text-[#029e9d]">
             <Link href={"/CountactUs"}>
               <span> Contact Us</span>
             </Link>
           </li>
-          <li className="text-xl text-white font-playfair transition-all ease-in-out   hover:text-[#029e9d]">
+          <li className="text-xl text-white  transition-all ease-in-out   hover:text-[#029e9d]">
             <Link href={"/terms-and-conditions"}>
               <span> Terms & Conditions</span>
             </Link>
           </li>
-          <li className="text-xl text-white font-playfair transition-all ease-in-out   hover:text-[#029e9d]">
+          <li className="text-xl text-white  transition-all ease-in-out   hover:text-[#029e9d]">
             <Link href={"/responsible-travel"}>
               <span> Responsible Travel</span>
             </Link>
           </li>
-          <li className="text-xl text-white font-playfair transition-all ease-in-out   hover:text-[#029e9d]">
+          <li className="text-xl text-white  transition-all ease-in-out   hover:text-[#029e9d]">
             <Link href={"/Egypt"}>
               <span> Egypt</span>
             </Link>
@@ -100,12 +96,12 @@ function ContectFooter() {
 
       <div className=" flex flex-col items-start pl-4 gap-4 md:gap-8 col-auto	  lg:col-start-9 lg:col-end-13 ">
         <div>
-          <h5 className="relative font-playfair capitalize text-2xl text-white font-bold ">
+          <h5 className="relative  capitalize text-2xl text-white font-bold ">
             Newsletter
             <span className=" absolute bottom-[-5px] left-0 h-1 w-[80%] bg-white"></span>
           </h5>
         </div>
-        <p className="text-lg font-playfair text-white ">
+        <p className="text-lg  text-white ">
           Join our community of over 20,000 global readers who receives emails
           filled with news, promotions, and other good stuff
         </p>

@@ -25,10 +25,10 @@ function HeaderPages({ typeList, bgtour, listSlug, singleSlug }) {
       <div className="absolute top-0 left-0 bottom-0 w-full h-full bg-[#0000002e]  "></div>
       {/* content  */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/1 w-full flex justify-center flex-col ">
-        <h1 className="uppercase text-3xl md:text-5xl text-white font-bold font-playfair text-center ">
+        <h1 className="uppercase text-3xl md:text-5xl text-white font-bold  text-center ">
           {typeList}
         </h1>
-        {/* <p className="text-white font-playfair capitalize text-xl text-center">
+        {/* <p className="text-white  capitalize text-xl text-center">
           <Link href={"/"}>
             <button className="  cursor-pointer text-[#029e9d]  ">Home</button>
           </Link>

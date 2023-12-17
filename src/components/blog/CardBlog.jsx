@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { BsFillStarFill } from "react-icons/bs";
 
@@ -14,33 +15,36 @@ function CardBlog({
 }) {
   return (
     <div className="wrapper cursor-pointer">
-      <div className="relative flex flex-col gap-3  shadow-lg bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
-        <div className="relative w-full h-[267px]">
-          <Image
-            alt={metaTitle}
-            title={metaTitle}
-            src={imgSrc}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            loading="lazy"
-            quality={60}
-            // placeholder="blur"
-            // blurDataURL={modifiedImageUrl}
-            className=" object-cover "
-          />
-          <div
-            style={{
-              background: "linear-gradient(to bottom,transparent,#000)",
-            }}
-            className="absolute top-0 left-0 w-full h-full  opacity-[0.4]"
-          ></div>
-        </div>
+      <div className="relative grid grid-cols-1 gap-3  shadow-lg bg-[#fff] justify-center items-center rounded-xl overflow-hidden  ">
+        <Link href={`/egypt-travel-blog/${slug}`}>
+          <div className="relative w-full h-[267px]">
+            <Image
+              alt={metaTitle}
+              title={metaTitle}
+              src={imgSrc}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              loading="lazy"
+              quality={60}
+              // placeholder="blur"
+              // blurDataURL={modifiedImageUrl}
+              className=" object-cover "
+            />
+            <div
+              style={{
+                background: "linear-gradient(to bottom,transparent,#000)",
+              }}
+              className="absolute top-0 left-0 w-full h-full  opacity-[0.4]"
+            ></div>
+          </div>
+        </Link>
         <div className="flex flex-col gap-3  px-4 pt-5 ">
           {/* title */}
-          <h2 className="  text-[#17233e] text-xl md:text-[22px] font-bold cursor-pointer md:hover:text-bsPrimary transition-all ">
-            {title}
-          </h2>
-
+          <Link href={`/egypt-travel-blog/${slug}`}>
+            <h2 className="  text-[#17233e] text-xl md:text-[22px] font-bold cursor-pointer md:hover:text-bsPrimary transition-all ">
+              {title}
+            </h2>
+          </Link>
           {/* description */}
           <div className="">
             <div
