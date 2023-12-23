@@ -2,6 +2,8 @@ import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar/NavBar";
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
+const Analytics = dynamic(() => import("@/components/helper/Analytics"));
 const Footer = dynamic(() => import("@/components/footer/Footer"));
 const Playfair = Playfair_Display({ subsets: ["latin"], variable: "--play" });
 
@@ -16,7 +18,10 @@ export default function RootLayout({ children }) {
       <body className={`${Playfair.variable} font-play`}>
         <NavBar />
         {children}
-        <Footer />
+        <Suspense fallback={<>...</>}>
+          <Footer />
+          <Analytics gtmId={"DJFLKJJKF"} />
+        </Suspense>
       </body>
     </html>
   );

@@ -6,6 +6,8 @@ const CardListContainer = dynamic(() =>
   import("@/components/tours/CardListContainer")
 );
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
+const FaqSection = dynamic(() => import("@/components/FaqSection/FaqSection"));
+
 export async function generateMetadata({ params: { types }, searchParams }) {
   const pages = await getData(`/types`);
   const dataPage = pages?.data.find((page) => page.slug == types);
@@ -37,6 +39,7 @@ async function ListTour({ params: { types } }) {
           </div>
         </div>
       </div>
+      <FaqSection />
     </div>
   );
 }

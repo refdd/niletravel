@@ -71,6 +71,7 @@ function CounterTraveller({
             </div>
             <TextField
               required
+              fullWidth
               type="tel"
               variant="outlined"
               value={childrens}

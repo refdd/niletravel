@@ -3,6 +3,9 @@ import { getData } from "../../../../../utils/featchApi";
 import dynamic from "next/dynamic";
 import HeaderSingle from "@/components/headers/HeaderSingle";
 import SingelGallery from "@/components/gallery/SingelGallery";
+const BottonInquire = dynamic(() =>
+  import("@/components/buttons/ButtonInquire")
+);
 const Itinerary = dynamic(() => import("@/components/singelTour/Itinerary"));
 const HighLights = dynamic(() => import("@/components/singelTour/HighLights"));
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
@@ -28,7 +31,7 @@ async function singelTour({ params: { slug } }) {
     <div>
       <div className="container mx-auto px-4  md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-7 ">
-          <div className="col-span-4">
+          <div className="md:col-span-4">
             <HeaderSingle
               titel={title}
               location={`Città Che Visiterai : ${destinations} `}
@@ -47,7 +50,7 @@ async function singelTour({ params: { slug } }) {
             />
             <Itinerary itinerariesDays={itineraries} />
           </div>
-          <div className="col-span-2">
+          <div className="md:col-span-2">
             <Suspense fallback={<>-----------</>}>
               <FormInquery />
             </Suspense>
@@ -55,6 +58,7 @@ async function singelTour({ params: { slug } }) {
         </div>
         <ExploreSection />
       </div>
+      <BottonInquire />
     </div>
   );
 }

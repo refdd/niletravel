@@ -72,7 +72,7 @@ function ContectFooter() {
             </Link>
           </li>
           <li className="text-xl text-white  transition-all ease-in-out   hover:text-[#029e9d]">
-            <Link href={"/CountactUs"}>
+            <Link href={"/ContactUs"}>
               <span> Contact Us</span>
             </Link>
           </li>

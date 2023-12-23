@@ -4,6 +4,7 @@ const Form = dynamic(() => import("./Form"));
 function FormInquery() {
   return (
     <div
+      id="inquerForm"
       style={{ boxShadow: "0 0 30px #cccccc57" }}
       className="rounded-[10px] overflow-hidden mt-9 static  md:sticky top-2  "
     >

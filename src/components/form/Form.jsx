@@ -117,7 +117,7 @@ function Form() {
         className=" grid grid-cols-1 gap-4 md:grid-cols-2  px-3 py-6"
       >
         {/* name */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <TextField
             id="name"
             label="Name"
@@ -131,7 +131,7 @@ function Form() {
           />
         </div>
         {/* email */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <TextField
             id="email"
             label="Email"
@@ -153,14 +153,14 @@ function Form() {
           <DepartureDate value={EndDate} onChange={handleEndDate} />
         </div>
         {/* Nationality */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <NationalitySelect
             selectedCountry={selectedCountry}
             handleCountryChange={handleCountryChange}
           />
         </div>
         {/* Phone Number  Field */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-1">
           <PhoneNumberField onChange={handlephoneNumber} value={number} />
         </div>
         {/* counter Travel */}

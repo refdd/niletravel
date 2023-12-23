@@ -25,9 +25,7 @@ function CardRelatedTour({ imgSrc, title, destinations, slug, typeSlug }) {
           </div>
           <div className="col-span-2">
             <div className="flex flex-col gap-1">
-              <h4 className="text-xl text-[#17233e] font-playfair font-bold ">
-                {title}
-              </h4>
+              <h4 className="text-xl text-[#17233e]  font-bold ">{title}</h4>
               <span className="text-[#777] font-mono text-lg">
                 {destinations}
               </span>

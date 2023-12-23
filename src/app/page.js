@@ -24,6 +24,7 @@ const Testimonials = dynamic(() =>
 const FindPerfectTour = dynamic(() =>
   import("@/components/perfectTour/FindPerfectTour")
 );
+
 function HomePage() {
   return (
     <div>
