@@ -5,6 +5,8 @@ import { FormProvider, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 import axios from "axios";
 import { format } from "date-fns";
+import { useRouter } from "next/navigation";
+
 const TextArea = dynamic(() => import("./TextArea"));
 const CounterTraveller = dynamic(() => import("./CounterTraveller"));
 const PhoneNumberField = dynamic(() => import("./PhoneNumberField"));
@@ -26,6 +28,7 @@ function Form() {
     phone: "1",
   });
   const methods = useForm();
+  const router = useRouter();
   //   handle start date change
   const handleStartDate = (date) => {
     setStartDate(date);
@@ -110,7 +113,7 @@ function Form() {
       )
       .then((res) => {
         console.log(res);
-        // router.push("/richiestaricevuta");
+        router.push("/Thank_you");
       })
       .catch((error) => {
         console.log(error);
