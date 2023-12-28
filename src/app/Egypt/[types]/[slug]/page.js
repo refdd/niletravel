@@ -27,14 +27,16 @@ async function singelTour({ params: { slug } }) {
     type,
     duration,
     itineraries,
+    image,
   } = singletour?.data;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
     name: title,
-    image: gallery[0]?.image,
+    image: image,
     description: description,
   };
+  // console.log(singletour?.data);
   return (
     <div>
       <script
