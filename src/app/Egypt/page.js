@@ -13,11 +13,17 @@ const HeaderSingle = dynamic(() => import("@/components/headers/HeaderSingle"));
 const HeaderSections = dynamic(() =>
   import("@/components/headers/HeaderSections")
 );
-
+export async function generateMetadata({ params, searchParams }) {
+  const egyptPage = await getData("/destinations/1");
+  return {
+    title: egyptPage?.data?.meta_title,
+    description: egyptPage?.data?.meta_description,
+  };
+}
 async function DestinationPage() {
   const egyptPage = await getData("/destinations/1");
   const tours = await getData("/tours?limit=7");
-
+  // console.log(egyptPage?.data?.meta_title);
   return (
     <div>
       <HeaderPages

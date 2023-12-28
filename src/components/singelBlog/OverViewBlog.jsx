@@ -7,7 +7,7 @@ function OverViewBlog({ description, author }) {
       <div className="flex flex-col gap-4">
         <div className="px-5">
           <div
-            className="text-[#777] text-xl textEditor"
+            className="text-bsDark text-xl textEditor"
             dangerouslySetInnerHTML={{ __html: description ? description : "" }}
           />
         </div>

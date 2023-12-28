@@ -118,7 +118,7 @@ function Form() {
       .catch((error) => {
         console.log(error);
       });
-    console.log(data);
+    // console.log(data);
   };
   return (
     <FormProvider {...methods}>

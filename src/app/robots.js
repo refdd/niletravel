@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/admin",
     },
-    sitemap: "www.viagemparaegito.com/sitemap.xml",
+    sitemap: "www.nilecruisez.com/sitemap.xml",
   };
 }

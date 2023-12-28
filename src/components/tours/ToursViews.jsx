@@ -10,14 +10,14 @@ function ToursViews({ tourNumber }) {
   const dispatch = useDispatch();
   return (
     <div className="flex flex-col md:flex-row gap-3  justify-center items-center ">
-      <p className=" text-center md:text-left md:pl-2  text-xl text-[#777]  capitalize">
+      <p className=" text-center md:text-left md:pl-2  text-xl text-bsDark  capitalize">
         showing {tourNumber} tours
       </p>
       <div className="flex gap-3 w-[60%] md:w-auto justify-center items-center">
         <span
           className={
             viewTour
-              ? " hidden md:block cursor-pointer text-[#777] "
+              ? " hidden md:block cursor-pointer text-bsDark "
               : " hidden md:block  cursor-pointer text-white bg-[#ffc107] rounded-sm  "
           }
           onClick={() => {
@@ -30,7 +30,7 @@ function ToursViews({ tourNumber }) {
           className={
             viewTour
               ? " hidden md:block  cursor-pointer text-white bg-[#ffc107] rounded-sm p-1 "
-              : " hidden md:block  cursor-pointer text-[#777]"
+              : " hidden md:block  cursor-pointer text-bsDark"
           }
           onClick={() => {
             dispatch(changeView());

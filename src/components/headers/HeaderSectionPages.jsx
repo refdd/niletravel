@@ -7,7 +7,7 @@ function HeaderSectionPages({ title, desc }) {
         <h1 className="text-[#17233e]  text-3xl capitalize text-center font-bold">
           {title}
         </h1>
-        <p className="text-[#777] text-lg  capitalize text-center">{desc}</p>
+        <p className="text-bsDark text-lg  capitalize text-center">{desc}</p>
       </div>
     </div>
   );

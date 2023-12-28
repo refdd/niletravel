@@ -41,10 +41,10 @@ function ReviewsSlider() {
           <h5 className=" text-xl font-bold  text-[#029e9d] mt-4">
             {testimonialsData[selected].name}
           </h5>
-          <h5 className="text-[#777]">{testimonialsData[selected].status}</h5>
+          <h5 className="text-bsDark">{testimonialsData[selected].status}</h5>
         </div>
         <div className="py-4 mx-2">
-          <div className="  ml-7  text-xl  flex  gap-1  text-[#777] capitalize ">
+          <div className="  ml-7  text-xl  flex  gap-1  text-bsDark capitalize ">
             <FaQuoteRight className="mt-[-10px] text-5xl text-bsPrimary" />{" "}
             <p className=" ">{testimonialsData[selected].review}</p>
           </div>

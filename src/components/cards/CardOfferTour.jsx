@@ -65,11 +65,11 @@ function CardOfferTour({
             <BsFillStarFill className="text-bsWarning" />
             <BsFillStarFill className="text-bsWarning" />
             <BsFillStarFill className="text-bsWarning" />
-            <span className="text-[#777] font-sans">({price - 10})</span>
+            <span className="text-bsDark font-sans">({price - 10})</span>
           </div>
           {/* description */}
           <div className="">
-            <p className="text-[#777] text-left leading-6 mb-3 pb-2 border-b border-dashed border-[#f1f1f1f1] ">
+            <p className="text-bsDark text-left leading-6 mb-3 pb-2 border-b border-dashed border-[#f1f1f1f1] ">
               {description.substring(0, 120)} ...
             </p>
           </div>
@@ -81,7 +81,7 @@ function CardOfferTour({
               {" "}
               $ {offerdiscount(discount, price)}
             </span>
-            <span className="font-sans text-base text-[#777]">
+            <span className="font-sans text-base text-bsDark">
               {" "}
               | Per Person{" "}
             </span>{" "}

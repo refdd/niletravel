@@ -10,7 +10,7 @@ function HeaderSingelBlog({ title, updated_at, author, image }) {
         <h1 className="text-center text-[#17233e]  font-bold text-2xl capitalize  md:text-4xl md:text-left  ">
           {title}
         </h1>
-        <div className="flex flex-wrap gap-2 justify-center md:justify-start text-[#777] text-lg   capitalize">
+        <div className="flex flex-wrap gap-2 justify-center md:justify-start text-bsDark text-lg   capitalize">
           <span className="flex items-center gap-2">
             {" "}
             <BsClock /> Posted On :{updated_at}

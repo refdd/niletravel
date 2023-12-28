@@ -20,12 +20,12 @@ export async function generateMetadata({ params: { types }, searchParams }) {
 }
 async function ListTour({ params: { types } }) {
   const tours = await getData(`/tours?site_map_frequency=${types}`);
-  // console.log(tours?.data);
+  const titleSlug = types?.replace(/-/g, " ");
   return (
     <div>
       <HeaderPages
-        typeList={"Egypt tours"}
-        listSlug={{ title: types, slug: types }}
+        typeList={titleSlug}
+        listSlug={{ title: titleSlug, slug: types }}
         singleSlug={""}
       />
       <div className="container mx-auto px-4 mt-20 md:px-10">

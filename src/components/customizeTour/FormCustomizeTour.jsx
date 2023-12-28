@@ -119,7 +119,7 @@ function FormCustomizeTour() {
         >
           {/* name */}
           <div className="md:col-span-1">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize ">
               Full Name
             </label>
             <TextField
@@ -136,7 +136,7 @@ function FormCustomizeTour() {
           </div>
           {/* email */}
           <div className="md:col-span-1">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize ">
               Email
             </label>
             <TextField
@@ -153,21 +153,21 @@ function FormCustomizeTour() {
           </div>
           {/* arrival */}
           <div className="">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize ">
               start date
             </label>
             <ArrivalDate value={StartDate} onChange={handleStartDate} />
           </div>
           {/* departure */}
           <div className="">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize ">
               end date
             </label>
             <DepartureDate value={EndDate} onChange={handleEndDate} />
           </div>
           {/* Nationality */}
           <div className="md:col-span-1">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize ">
               Nationailty
             </label>
             <NationalitySelect
@@ -177,7 +177,7 @@ function FormCustomizeTour() {
           </div>
           {/* Phone Number  Field */}
           <div className="md:col-span-1">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize ">
               code Number
             </label>
             <PhoneNumberField onChange={handlephoneNumber} value={number} />
@@ -197,7 +197,7 @@ function FormCustomizeTour() {
           </div>
           {/*message*/}
           <div className="md:col-span-2">
-            <label className="block mb-2 text-2xl font-medium text-[#777] capitalize w-60 md:w-auto  ">
+            <label className="block mb-2 text-2xl font-medium text-bsDark capitalize w-60 md:w-auto  ">
               your massage
             </label>
             <TextArea />

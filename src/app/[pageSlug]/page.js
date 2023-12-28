@@ -10,14 +10,22 @@ const Testimonials = dynamic(() =>
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
+export async function generateMetadata({ params: { pageSlug }, searchParams }) {
+  const pages = await getData(`/pages/${pageSlug}`);
+  return {
+    title: pages?.data?.meta_title,
+    description: pages?.data?.meta_description,
+  };
+}
 async function TermsAndConditions({ params: { pageSlug } }) {
   const pages = await getData(`/pages/${pageSlug}`);
-  console.log(pages);
-  const { title, description, slug } = pages?.data;
+  // console.log(pages);
+  const { title, description, slug, meta_title, meta_description } =
+    pages?.data;
   return (
     <div>
       <HeaderPages
-        typeList={"terms and conditions"}
+        typeList={title}
         listSlug={{
           title: title,
           slug: slug,

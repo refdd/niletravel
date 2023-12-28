@@ -9,7 +9,7 @@ function OverViews({ description, excluded, included }) {
         Description
       </h4>
       <div
-        className="text-[#777] text-xl textEditor"
+        className="text-bsDark text-xl textEditor"
         dangerouslySetInnerHTML={{ __html: description ? description : "" }}
       /> */}
       <IncludedPrice included={included} />

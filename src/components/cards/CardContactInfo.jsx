@@ -8,7 +8,7 @@ function CardContactInfo({ Icon, title, desc }) {
         {" "}
         {title}
       </h2>
-      <p className="text-center text-[#777]  capitalize leading-7">{desc}</p>
+      <p className="text-center text-bsDark  capitalize leading-7">{desc}</p>
     </div>
   );
 }

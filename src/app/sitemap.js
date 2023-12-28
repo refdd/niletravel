@@ -1,5 +1,5 @@
 import { getData } from "../../utils/featchApi";
-const baseUrl = "www://viagemparaegito.com";
+const baseUrl = "www.nilecruisez.com";
 async function sitemap() {
   const pages = await getData("/pages");
   const types = await getData("/types");
@@ -56,11 +56,6 @@ async function sitemap() {
     },
     ...pages?.data.map((slug) => ({
       url: `${baseUrl}/${slug?.slug}`,
-      changeFrequency: "monthly",
-      priority: 1,
-    })),
-    ...types?.data.map((slug) => ({
-      url: `${baseUrl}/Egypt/${slug?.slug}`,
       changeFrequency: "monthly",
       priority: 1,
     })),

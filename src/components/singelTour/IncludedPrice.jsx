@@ -6,7 +6,7 @@ function IncludedPrice({ included }) {
       <div className="flex flex-col pl-4">
         <h6 className="text-2xl text-[#17233e]  capitalize  my-3">Includes</h6>
         <div
-          className="text-[#777] text-xl textEditor"
+          className="text-bsDark text-xl textEditor"
           dangerouslySetInnerHTML={{ __html: included ? included : "" }}
         />
       </div>

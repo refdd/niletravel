@@ -7,12 +7,12 @@ function HeaderSingle({ titel, location, reviews }) {
           {titel}
         </h1>
         <div className="flex  flex-col justify-center items-center md:flex-row md:w-full gap-2 md:justify-start ">
-          <p className="text-[#777] text-lg capitalize flex justify-center items-center gap-1  ">
+          <p className="text-bsDark text-lg capitalize flex justify-center items-center gap-1  ">
             {" "}
             <span></span> {location}{" "}
           </p>
 
-          <p className="text-[#777] text-lg font- capitalize text-center  ">
+          <p className="text-bsDark text-lg font- capitalize text-center  ">
             {reviews}
           </p>
         </div>

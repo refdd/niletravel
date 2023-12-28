@@ -8,14 +8,12 @@ const OverViewBlog = dynamic(() =>
 const RelatedTour = dynamic(() =>
   import("@/components/singelBlog/RelatedTour")
 );
-const RowBlog = dynamic(() => import("@/components/blog/RowBlog"));
 const ShareIcons = dynamic(() => import("@/components/singelBlog/ShareIcons"));
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 async function SingleBlog({ params: { slug } }) {
   const singleBlog = await getData(`/posts/${slug}`);
   const { title, updated_at, author, image, description, tours } =
     singleBlog?.data;
-  //   console.log(tours[0]);
   return (
     <div>
       <HeaderSingelBlog
@@ -37,11 +35,6 @@ async function SingleBlog({ params: { slug } }) {
             <RelatedTour relatedTous={tours} />
           </div>
         </div>
-        <RowBlog
-          partOne={"Related"}
-          partTwo={"Articles"}
-          seeMoreSlug={"egypt-travel-blog"}
-        />
       </div>
     </div>
   );

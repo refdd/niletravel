@@ -10,7 +10,7 @@ function CardPerfectTour({ Icon, title, description }) {
         <h3 className="text-2xl text-[#17233e] font-bold z-10 duration-1000 group-hover:text-white  ">
           {title}
         </h3>
-        <p className="text-center text-[#777] z-10 duration-1000 group-hover:text-white ">
+        <p className="text-center text-bsDark z-10 duration-1000 group-hover:text-white ">
           {description}
         </p>
         <div className="w-full PrefectCard bg-[#029e9d]  absolute bottom-0 left-0  "></div>

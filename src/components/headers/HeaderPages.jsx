@@ -42,10 +42,10 @@ function HeaderPages({ typeList, bgtour, listSlug, singleSlug }) {
       </div>
 
       {/* bottom image */}
-      <div
+      {/* <div
         style={{ backgroundImage: `url(${bgBottom.src})` }}
         className=" absolute -bottom-1  w-full h-24 bg-contain bg-top  mt-[-28px] bg-repeat-x z-10 rotate-[180deg]"
-      ></div>
+      ></div> */}
     </div>
   );
 }

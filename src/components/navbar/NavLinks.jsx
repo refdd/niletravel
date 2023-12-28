@@ -6,16 +6,16 @@ function NavLinks({}) {
     <div className="">
       <div className=" flex items-center  justify-between ">
         <ul className="flex items-center flex-1 gap-20">
-          <li className="text-lg uppercase text-[#777] transition  hover:text-[#029e9d] ">
+          <li className="text-lg uppercase text-bsDark transition  hover:text-[#029e9d] ">
             <Link href="/">Home</Link>
           </li>
-          <li className="text-lg uppercase text-[#777] transition  hover:text-[#029e9d] ">
+          <li className="text-lg uppercase text-bsDark transition  hover:text-[#029e9d] ">
             <Link href={`/Egypt/egypt-tour-packages`}>Traval Packages</Link>
           </li>
-          <li className=" text-lg uppercase  text-[#777] transition  hover:text-[#029e9d] ">
+          <li className=" text-lg uppercase  text-bsDark transition  hover:text-[#029e9d] ">
             <Link href={`/Egypt/river-nile-cruises`}>Egypt Cruises</Link>
           </li>
-          <li className=" text-lg uppercase text-[#777] transition  hover:text-[#029e9d] ">
+          <li className=" text-lg uppercase text-bsDark transition  hover:text-[#029e9d] ">
             <Link href={`/egypt-travel-blog`}>Blog</Link>
           </li>
         </ul>

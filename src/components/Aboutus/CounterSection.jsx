@@ -8,19 +8,19 @@ function CounterSection() {
           <h6 className="text-7xl text-[#029e9d] font-mono font-bold  text-left">
             18
           </h6>
-          <p className="text-[#777] text-left text-lg ">Years Experiences</p>
+          <p className="text-bsDark text-left text-lg ">Years Experiences</p>
         </div>
         <div className="flex flex-col gap-3  w-full  p-4 ">
           <h6 className="text-7xl text-[#029e9d] font-mono font-bold  text-left">
             39
           </h6>
-          <p className="text-[#777] text-left text-lg ">Tour Packages</p>
+          <p className="text-bsDark text-left text-lg ">Tour Packages</p>
         </div>
         <div className="flex flex-col gap-3  w-full p-4  ">
           <h6 className="text-7xl text-[#029e9d] font-mono font-bold  text-left">
             3320
           </h6>
-          <p className="text-[#777] text-left text-lg ">Happy Customers</p>
+          <p className="text-bsDark text-left text-lg ">Happy Customers</p>
         </div>
       </div>
     </div>
