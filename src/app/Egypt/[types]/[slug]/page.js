@@ -15,6 +15,7 @@ const ExploreSection = dynamic(() =>
 
 async function singelTour({ params: { slug } }) {
   const singletour = await getData(`/tours/${slug}`);
+
   const {
     title,
     destinations,
@@ -27,8 +28,19 @@ async function singelTour({ params: { slug } }) {
     duration,
     itineraries,
   } = singletour?.data;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: title,
+    image: gallery[0]?.image,
+    description: description,
+  };
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="container mx-auto px-4  md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-7 ">
           <div className="md:col-span-4">
