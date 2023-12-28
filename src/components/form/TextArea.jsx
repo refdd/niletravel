@@ -12,7 +12,7 @@ function TextArea() {
         placeholder="Children's ages if you have children
                   Any locations you want to visit or any specific needs
 "
-        {...register("advice", { required: true })}
+        {...register("comment", { required: true })}
       ></textarea>
     </div>
   );

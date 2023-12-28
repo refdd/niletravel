@@ -1,11 +1,15 @@
+"use client";
 import React from "react";
 import CardBlog from "./CardBlog";
+import { useSelector } from "react-redux";
+import ButtonLoadMore from "../buttons/ButtonLoadMore";
 
 function ListBlolgContainer({ dataBlog }) {
+  const SeeMore = useSelector((state) => state.SeeMore?.value);
   return (
     <div className="md:col-span-2">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {dataBlog?.map((item) => (
+        {dataBlog?.slice(0, SeeMore)?.map((item) => (
           <CardBlog
             key={item.id}
             slugType={""}
@@ -19,6 +23,7 @@ function ListBlolgContainer({ dataBlog }) {
           />
         ))}
       </div>
+      <ButtonLoadMore />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import "./globals.css";
 import NavBar from "@/components/navbar/NavBar";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import CustomProvider from "@/components/headers/CustomProvider";
 const Analytics = dynamic(() => import("@/components/helper/Analytics"));
 const Footer = dynamic(() => import("@/components/footer/Footer"));
 const Playfair = Playfair_Display({ subsets: ["latin"], variable: "--play" });
@@ -16,12 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${Playfair.variable} font-play`}>
-        <NavBar />
-        {children}
-        <Suspense fallback={<>...</>}>
-          <Footer />
-          <Analytics gtmId={"DJFLKJJKF"} />
-        </Suspense>
+        <CustomProvider>
+          <NavBar />
+          {children}
+          <Suspense fallback={<>...</>}>
+            <Footer />
+            <Analytics gtmId={"DJFLKJJKF"} />
+          </Suspense>
+        </CustomProvider>
       </body>
     </html>
   );

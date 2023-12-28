@@ -45,7 +45,7 @@ function ItineraryDays({ daysItinerary }) {
         </button> */}
         {daysItinerary.map((q, index) => (
           <div key={index} className="border border-[#ebe6de] mb-4 rounded-lg">
-            <button
+            <h3
               className={`flex items-center justify-between w-full  py-5 px-1 ${
                 activeIndex === index ? "bg-[#fff]" : "bg-bslight"
               }`}
@@ -63,7 +63,7 @@ function ItineraryDays({ daysItinerary }) {
                   }`}
                 />
               </div>
-            </button>
+            </h3>
             {(isExpanded || activeIndex === index) && (
               <div className="flex flex-col space-y-3 min-h-0 px-10 pb-7">
                 <div className="mt-4 text-base text-gray-500 capitalize">

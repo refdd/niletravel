@@ -25,7 +25,7 @@ function TapsPackagesTour({ allcategories, slugType }) {
         allcategories={allcategories}
       />
       <ToursSlier toursData={tours} slugType={slugType} />
-      <SeeMoreButton title={"See More"} slug={slugType} />
+      <SeeMoreButton title={"See More"} slug={`Egypt/${slugType}`} />
     </div>
   );
 }

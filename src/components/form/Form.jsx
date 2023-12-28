@@ -3,6 +3,8 @@ import TextField from "@mui/material/TextField";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
+import axios from "axios";
+import { format } from "date-fns";
 const TextArea = dynamic(() => import("./TextArea"));
 const CounterTraveller = dynamic(() => import("./CounterTraveller"));
 const PhoneNumberField = dynamic(() => import("./PhoneNumberField"));
@@ -76,38 +78,43 @@ function Form() {
       setChilds(childs + 1);
     }
   };
+  const dateArrival = StartDate
+    ? format(new Date(StartDate), "dd/MM/yyyy")
+    : StartDate;
+
+  const dateDepature = EndDate
+    ? format(new Date(EndDate), "dd/MM/yyyy")
+    : EndDate;
   const onSubmit = (data) => {
-    // axios
-    //   .post(
-    //     `https://api.dubaidaytrips.com/v1/inquires?tenant_id=18&language_id=11`,
-    //     {
-    //       ...data,
-    //       adults: aduits,
-    //       children: childs,
-    //       departure_airport: ariportFlight,
-    //       arrival: dateArrival,
-    //       departure: dateDepature,
-    //       flight: checked ? "yes" : "no",
-    //       url_goal: window.location.href,
-    //       number: number,
-    //       nationality: selectedCountry.label,
-    //       name,
-    //       email,
-    //       ageOfChildern: JSON.stringify(childAges),
-    //     },
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //     router.push("/richiestaricevuta");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axios
+      .post(
+        `https://api.nilecruisez.com/api/inquiries`,
+        {
+          ...data,
+          name,
+          email,
+          phone: number,
+          start_date: dateArrival,
+          end_date: dateDepature,
+          nationality: selectedCountry.label,
+          url: window.location.href,
+          tour_id: 1,
+          adult: aduits,
+          kid: childs,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        // router.push("/richiestaricevuta");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     console.log(data);
   };
   return (

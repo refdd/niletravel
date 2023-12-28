@@ -1,5 +1,5 @@
 import HeaderSingelBlog from "@/components/singelBlog/HeaderSingelBlog";
-import React from "react";
+import React, { Suspense } from "react";
 import { getData } from "../../../../utils/featchApi";
 import dynamic from "next/dynamic";
 const OverViewBlog = dynamic(() =>
@@ -8,7 +8,9 @@ const OverViewBlog = dynamic(() =>
 const RelatedTour = dynamic(() =>
   import("@/components/singelBlog/RelatedTour")
 );
+const RowBlog = dynamic(() => import("@/components/blog/RowBlog"));
 const ShareIcons = dynamic(() => import("@/components/singelBlog/ShareIcons"));
+const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 async function SingleBlog({ params: { slug } }) {
   const singleBlog = await getData(`/posts/${slug}`);
   const { title, updated_at, author, image, description, tours } =
@@ -29,9 +31,17 @@ async function SingleBlog({ params: { slug } }) {
             <ShareIcons subSlug={slug} />
           </div>
           <div>
+            <Suspense fallback={<>-----------</>}>
+              <FormInquery notStiky />
+            </Suspense>
             <RelatedTour relatedTous={tours} />
           </div>
         </div>
+        <RowBlog
+          partOne={"Related"}
+          partTwo={"Articles"}
+          seeMoreSlug={"egypt-travel-blog"}
+        />
       </div>
     </div>
   );

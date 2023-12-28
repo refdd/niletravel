@@ -2,9 +2,11 @@ import HeaderPages from "@/components/headers/HeaderPages";
 import React, { Suspense } from "react";
 import { getData } from "../../../../utils/featchApi";
 import dynamic from "next/dynamic";
+import BottonInquire from "@/components/buttons/ButtonInquire";
 const CardListContainer = dynamic(() =>
   import("@/components/tours/CardListContainer")
 );
+const ToursViews = dynamic(() => import("@/components/tours/ToursViews"));
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 const FaqSection = dynamic(() => import("@/components/FaqSection/FaqSection"));
 
@@ -26,12 +28,14 @@ async function ListTour({ params: { types } }) {
         listSlug={{ title: types, slug: types }}
         singleSlug={""}
       />
-      <div className="container mx-auto px-4 mt-28 md:px-10">
+      <div className="container mx-auto px-4 mt-20 md:px-10">
         <div className="grid grid-cols-1 gap-7 md:grid-cols-3">
-          <Suspense fallback={<>-----------</>}>
-            <CardListContainer toursData={tours?.data} slugType={types} />
-          </Suspense>
-
+          <div className="pt-5 md:col-span-2">
+            <Suspense fallback={<>-----------</>}>
+              <ToursViews tourNumber={tours?.data?.length} />
+              <CardListContainer toursData={tours?.data} slugType={types} />
+            </Suspense>
+          </div>
           <div>
             <Suspense fallback={<>-----------</>}>
               <FormInquery />
@@ -40,6 +44,7 @@ async function ListTour({ params: { types } }) {
         </div>
       </div>
       <FaqSection />
+      <BottonInquire />
     </div>
   );
 }

@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/",
+      disallow: "/admin",
     },
     sitemap: "www.viagemparaegito.com/sitemap.xml",
   };
