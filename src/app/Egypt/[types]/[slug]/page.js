@@ -35,6 +35,11 @@ async function singelTour({ params: { slug } }) {
     name: title,
     image: image,
     description: description,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 4.9,
+      reviewCount: 899,
+    },
   };
   // console.log(singletour?.data);
   return (
