@@ -16,7 +16,7 @@ async function SingleBlog({ params: { slug } }) {
     singleBlog?.data;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "NewsArticle",
+    "@type": "BlogPosting",
     headline: title,
     image: image,
     datePublished: created_at,

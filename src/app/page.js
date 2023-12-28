@@ -2,6 +2,7 @@ import MainHeader from "@/components/headers/MainHeader";
 import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 import { getData } from "../../utils/featchApi";
+import CarouselShcmas from "@/components/shcemas/CarouselShcmas";
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
@@ -25,6 +26,7 @@ export async function generateMetadata({ params, searchParams }) {
 function HomePage() {
   return (
     <div>
+      <CarouselShcmas />
       <MainHeader />
       <Suspense fallback={<>-----------</>}>
         {/* <SearchSection /> */}
