@@ -12,10 +12,23 @@ const ShareIcons = dynamic(() => import("@/components/singelBlog/ShareIcons"));
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 async function SingleBlog({ params: { slug } }) {
   const singleBlog = await getData(`/posts/${slug}`);
-  const { title, updated_at, author, image, description, tours } =
+  const { title, updated_at, author, image, description, tours, created_at } =
     singleBlog?.data;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: title,
+    image: image,
+    datePublished: created_at,
+    dateModified: updated_at,
+  };
+  // console.log(singleBlog?.data);
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeaderSingelBlog
         title={title}
         updated_at={updated_at}
