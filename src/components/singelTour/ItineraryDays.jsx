@@ -71,7 +71,7 @@ function ItineraryDays({ daysItinerary }) {
                     dangerouslySetInnerHTML={{
                       __html: q.description ? q.description : "",
                     }}
-                    className="  textEditorItenerary text-lg !leading-[34px] text-colorGray "
+                    className="  textEditorItenerary text-lg font-medium !leading-[34px] !text-black "
                   ></div>
                 </div>
               </div>

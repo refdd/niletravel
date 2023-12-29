@@ -27,6 +27,15 @@ function OrganizationShcams({}) {
     "@type": "Blog",
     url: "https://www.nilecruisez.com/egypt-travel-blog",
   };
+  const jsonLdAgency = {
+    "@context": "http://www.schema.org",
+    "@type": "TravelAgency",
+    name: "Around Egypt Tours",
+    url: "https://www.nilecruisez.com/",
+    logo: "https://www.nilecruisez.com/_next/static/media/logo-new.b01bd2f4.svg",
+    description:
+      "Get a taste of the past on our trips to Egypt, where you will take a walk through the footsteps of the pharaohs through ancient temples and monuments",
+  };
   return (
     <div>
       <script
@@ -36,6 +45,10 @@ function OrganizationShcams({}) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBlog) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdAgency) }}
       />
     </div>
   );

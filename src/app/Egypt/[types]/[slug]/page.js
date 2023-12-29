@@ -3,6 +3,8 @@ import { getData } from "../../../../../utils/featchApi";
 import dynamic from "next/dynamic";
 import HeaderSingle from "@/components/headers/HeaderSingle";
 import SingelGallery from "@/components/gallery/SingelGallery";
+import ProductShcemas from "@/components/shcemas/ProductShcemas";
+import TouristDestinationShcemas from "@/components/shcemas/TouristDestinationShcemas";
 const BottonInquire = dynamic(() =>
   import("@/components/buttons/ButtonInquire")
 );
@@ -13,7 +15,7 @@ const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
 
-async function singelTour({ params: { slug } }) {
+async function singelTour({ params: { slug, types } }) {
   const singletour = await getData(`/tours/${slug}`);
 
   const {
@@ -29,24 +31,16 @@ async function singelTour({ params: { slug } }) {
     itineraries,
     image,
   } = singletour?.data;
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: title,
-    image: image,
-    description: description,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: 4.9,
-      reviewCount: 899,
-    },
-  };
-  // console.log(singletour?.data);
+
+  // console.log(params);
   return (
     <div>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      <ProductShcemas title={title} image={image} description={description} />
+      <TouristDestinationShcemas
+        title={title}
+        image={image}
+        description={description}
+        urlTour={`https://www.nilecruisez.com/Egypt/${types}/${slug}`}
       />
       <div className="container mx-auto px-4  md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-6 gap-7 ">

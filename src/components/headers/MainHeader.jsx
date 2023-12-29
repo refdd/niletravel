@@ -11,7 +11,12 @@ async function MainHeader() {
           muted
         />
         {/* layout */}
-        <div className="absolute top-0 left-0 w-full h-full bg-[##0000005e]  "></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[#00000063]  "></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[70&]">
+          <h1 className="text-white text-xl md:text-4xl font-bold text-center">
+            Sail the Majestic Nile with Unforgettable Nile Cruises
+          </h1>
+        </div>
       </div>
     </div>
   );

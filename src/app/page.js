@@ -20,7 +20,7 @@ export async function generateMetadata({ params, searchParams }) {
   const metaTitle = await getData("/settings?name=meta_title");
   return {
     title: metaTitle?.data[0]?.value,
-    description: metaDesc[0]?.data?.value,
+    description: metaDesc?.data[0]?.value,
   };
 }
 function HomePage() {
