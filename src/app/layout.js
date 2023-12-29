@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import CustomProvider from "@/components/headers/CustomProvider";
 import { getData } from "../../utils/featchApi";
+import OrganizationShcams from "@/components/shcemas/OrganizationShcams";
 const Analytics = dynamic(() => import("@/components/helper/Analytics"));
 const Footer = dynamic(() => import("@/components/footer/Footer"));
 const Playfair = Playfair_Display({ subsets: ["latin"], variable: "--play" });
@@ -20,6 +21,7 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={`${Playfair.variable} font-play`}>
         <CustomProvider>
+          <OrganizationShcams />
           <NavBar />
           {children}
           <Suspense fallback={<>...</>}>
