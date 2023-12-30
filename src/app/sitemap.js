@@ -1,5 +1,5 @@
 import { getData } from "../../utils/featchApi";
-const baseUrl = "www.nilecruisez.com";
+const baseUrl = "https://www.nilecruisez.com/";
 async function sitemap() {
   const pages = await getData("/pages");
   const types = await getData("/types");

@@ -11,7 +11,7 @@ function ToursSlider({ toursData, slugType }) {
             <CardTour
               imgSrc={item?.image}
               slug={item?.slug}
-              slugType={slugType}
+              slugType={item?.site_map_frequency}
               metaTitle={item.meta_title}
               duration={item?.duration}
               title={item?.title}

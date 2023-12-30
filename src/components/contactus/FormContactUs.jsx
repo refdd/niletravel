@@ -4,49 +4,44 @@ import { FormProvider, useForm } from "react-hook-form";
 import PhoneNumberField from "../form/PhoneNumberField";
 import TextArea from "../form/TextArea";
 import TextField from "@mui/material/TextField";
+import { useRouter } from "next/navigation";
+import axios from "axios";
 
 function FormContactUs() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [number, setnumber] = useState("+1");
   const methods = useForm();
+  const router = useRouter();
   //   handle change phone number
   const handlephoneNumber = (value) => {
     setnumber(value);
   };
   const onSubmit = (data) => {
-    // axios
-    //   .post(
-    //     `https://api.dubaidaytrips.com/v1/inquires?tenant_id=18&language_id=11`,
-    //     {
-    //       ...data,
-    //       adults: aduits,
-    //       children: childs,
-    //       departure_airport: ariportFlight,
-    //       arrival: dateArrival,
-    //       departure: dateDepature,
-    //       flight: checked ? "yes" : "no",
-    //       url_goal: window.location.href,
-    //       number: number,
-    //       nationality: selectedCountry.label,
-    //       name,
-    //       email,
-    //       ageOfChildern: JSON.stringify(childAges),
-    //     },
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //     router.push("/richiestaricevuta");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    console.log(data);
+    axios
+      .post(
+        `https://api.nilecruisez.com/api/contact_us`,
+        {
+          ...data,
+          full_name: name,
+          email: email,
+          phone: number,
+          subject: "Contact Us",
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        router.push("/Thank_you");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // console.log(data);
   };
   return (
     <div className="md:col-span-2">
@@ -83,7 +78,6 @@ function FormContactUs() {
               }}
             />
           </div>
-
           {/* Phone Number  Field */}
           <div className="md:col-span-2">
             <PhoneNumberField onChange={handlephoneNumber} value={number} />
@@ -92,7 +86,15 @@ function FormContactUs() {
 
           {/*message*/}
           <div className="md:col-span-2">
-            <TextArea />
+            <textarea
+              id="message"
+              rows="3"
+              className="block p-2.5 w-full text-sm text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500  "
+              placeholder="Children's ages if you have children
+                  Any locations you want to visit or any specific needs
+"
+              {...methods?.register("message", { required: true })}
+            ></textarea>
           </div>
           {/* button */}
           <div className="md:col-span-2">

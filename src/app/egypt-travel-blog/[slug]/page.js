@@ -2,6 +2,7 @@ import HeaderSingelBlog from "@/components/singelBlog/HeaderSingelBlog";
 import React, { Suspense } from "react";
 import { getData } from "../../../../utils/featchApi";
 import dynamic from "next/dynamic";
+import ImagesShcemas from "@/components/shcemas/ImagesShcemas";
 const OverViewBlog = dynamic(() =>
   import("@/components/singelBlog/OverViewBlog")
 );
@@ -10,6 +11,13 @@ const RelatedTour = dynamic(() =>
 );
 const ShareIcons = dynamic(() => import("@/components/singelBlog/ShareIcons"));
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
+export async function generateMetadata({ params: { slug }, searchParams }) {
+  const singleBlog = await getData(`/posts/${slug}`);
+  return {
+    title: singleBlog?.data?.meta_title,
+    description: singleBlog?.data?.meta_description,
+  };
+}
 async function SingleBlog({ params: { slug } }) {
   const singleBlog = await getData(`/posts/${slug}`);
   const { title, updated_at, author, image, description, tours, created_at } =
@@ -29,6 +37,7 @@ async function SingleBlog({ params: { slug } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <ImagesShcemas imageUrl={image} name={title} />
       <HeaderSingelBlog
         title={title}
         updated_at={updated_at}

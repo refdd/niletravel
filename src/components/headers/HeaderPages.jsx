@@ -8,7 +8,7 @@ function HeaderPages({ typeList, bgtour, listSlug, singleSlug }) {
   return (
     <div
       //   style={{ backgroundImage: `url(${bg.src})` }}
-      className="relative w-full h-[700px] md:h-[700px]"
+      className="relative w-full h-[600px] md:h-[700px]"
     >
       <Image
         alt={"image header pages"}

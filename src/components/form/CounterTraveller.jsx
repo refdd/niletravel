@@ -5,7 +5,7 @@ import { FaChild } from "react-icons/fa";
 import { ImMan } from "react-icons/im";
 import { MdOutlinePersonRemoveAlt1 } from "react-icons/md";
 import dynamic from "next/dynamic";
-const ChildAgesFiled = dynamic(() => import("./ChildAgesFiled"));
+// const ChildAgesFiled = dynamic(() => import("./ChildAgesFiled"));
 function CounterTraveller({
   adults,
   childrens,
@@ -90,10 +90,10 @@ function CounterTraveller({
         </div>
       </div>
 
-      <ChildAgesFiled
+      {/* <ChildAgesFiled
         childAges={childAges}
         handleChildAgeChange={handleChildAgeChange}
-      />
+      /> */}
     </div>
   );
 }

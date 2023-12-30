@@ -3,6 +3,7 @@ import logoFooter from "../../../public/assets/images/aet-logo.svg";
 
 import Image from "next/image";
 import Link from "next/link";
+import SubscrbeMail from "./SubscrbeMail";
 // import SubscrbeMail from "./helper/SubscrbeMail";
 
 function ContectFooter() {
@@ -54,7 +55,8 @@ function ContectFooter() {
         </h6>
         <h6 className="text-xl text-white   ">
           {" "}
-          <span className="font-bold  "> Email:</span> Sales@nilecruisez.com
+          <span className="font-bold  "> Email: </span>
+          sales@aroundegypttours.com
         </h6>
       </div>
       <div className="  flex flex-col  items-start pl-4 gap-4 col-auto lg:col-start-5 lg:col-end-7">
@@ -105,7 +107,7 @@ function ContectFooter() {
           Join our community of over 20,000 global readers who receives emails
           filled with news, promotions, and other good stuff
         </p>
-        {/* <SubscrbeMail /> */}
+        <SubscrbeMail />
       </div>
       {/* <div className=" w-full  bg-white  col-start-9 col-end-13  ">fsdfjdkjflksjfldjslkfjsdlk</div> */}
     </div>

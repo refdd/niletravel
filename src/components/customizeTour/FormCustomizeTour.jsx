@@ -1,6 +1,9 @@
 "use client";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
+import { format } from "date-fns";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 const ArrivalDate = dynamic(() => import("../form/ArrivalDate"));
@@ -24,6 +27,8 @@ function FormCustomizeTour() {
     phone: "1",
   });
   const methods = useForm();
+  const router = useRouter();
+
   //   handle start date change
   const handleStartDate = (date) => {
     setStartDate(date);
@@ -76,39 +81,44 @@ function FormCustomizeTour() {
       setChilds(childs + 1);
     }
   };
+  const dateArrival = StartDate
+    ? format(new Date(StartDate), "dd/MM/yyyy")
+    : StartDate;
+
+  const dateDepature = EndDate
+    ? format(new Date(EndDate), "dd/MM/yyyy")
+    : EndDate;
   const onSubmit = (data) => {
-    // axios
-    //   .post(
-    //     `https://api.dubaidaytrips.com/v1/inquires?tenant_id=18&language_id=11`,
-    //     {
-    //       ...data,
-    //       adults: aduits,
-    //       children: childs,
-    //       departure_airport: ariportFlight,
-    //       arrival: dateArrival,
-    //       departure: dateDepature,
-    //       flight: checked ? "yes" : "no",
-    //       url_goal: window.location.href,
-    //       number: number,
-    //       nationality: selectedCountry.label,
-    //       name,
-    //       email,
-    //       ageOfChildern: JSON.stringify(childAges),
-    //     },
-    //     {
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //     }
-    //   )
-    //   .then((res) => {
-    //     console.log(res);
-    //     router.push("/richiestaricevuta");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    console.log(data);
+    axios
+      .post(
+        `https://api.nilecruisez.com/api/inquiries`,
+        {
+          ...data,
+          name,
+          email,
+          phone: number,
+          start_date: dateArrival,
+          end_date: dateDepature,
+          nationality: selectedCountry.label,
+          url: window.location.href,
+          tour_id: 1,
+          adult: aduits,
+          kid: childs,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
+      .then((res) => {
+        console.log(res);
+        router.push("/Thank_you");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // console.log(data);
   };
   return (
     <div className="  md:w-[60%] md:mx-auto border rounded-md shadow-lg  mt-9">
@@ -198,7 +208,7 @@ function FormCustomizeTour() {
           {/*message*/}
           <div className="md:col-span-2">
             <label className="block mb-2 text-2xl font-medium text-bsDark capitalize w-60 md:w-auto  ">
-              your massage
+              your message
             </label>
             <TextArea />
           </div>

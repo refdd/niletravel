@@ -7,7 +7,7 @@ async function RowsPackage() {
   const types = await getData("/types");
   //   console.log(types?.data[0]);
   return (
-    <div className="container mx-auto px-4">
+    <div className="container mx-auto px-4 pt-10">
       {types?.data?.map((type) => (
         <section key={type.id} className=" pt-20  ">
           <HeaderSections

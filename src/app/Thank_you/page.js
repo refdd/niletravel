@@ -12,7 +12,7 @@ function Thank_you() {
       />
       <OverviewThankYou
         body={
-          "We Received Your Inquiry And Will Contact You Shortly On Your Email (...@....Com). If You Didn't Receive A Replay Withing The Next 24H Please Check Your Spam, Junk."
+          "We Received Your Inquiry And Will Contact You Shortly On Your Email If You Didn't Receive A Replay Withing The Next 24H Please Check Your Spam, Junk."
         }
         title={"Thank You"}
       />

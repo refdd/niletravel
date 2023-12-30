@@ -6,7 +6,14 @@ const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
 const FaqSection = dynamic(() => import("@/components/FaqSection/FaqSection"));
-
+export async function generateMetadata({ params: { slug }, searchParams }) {
+  return {
+    title:
+      "Egypt Trip Planning | Plan a Vacation to Egypt | Egypt Trip Planner",
+    description:
+      "Are you planning to visit Egypt We offer all that you need in Egypt, covering all cities and attractions, we will take care of all your needs Inquire now!",
+  };
+}
 function InquireNow() {
   return (
     <div>

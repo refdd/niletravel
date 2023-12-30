@@ -6,7 +6,13 @@ const ListBlolgContainer = dynamic(() =>
   import("@/components/blog/ListBlolgContainer")
 );
 const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
-
+export async function generateMetadata({ params: { slug }, searchParams }) {
+  return {
+    title: "Egypt Travel Blog | Egypt Travel Advisory",
+    description:
+      "The top Popular Egypt travel blog featuring travel tips, fashion, food and photography from around Egypt Read before starting adventures Read more!",
+  };
+}
 async function ListBlog() {
   const blog = await getData(`/posts`);
 

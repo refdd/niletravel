@@ -12,6 +12,13 @@ const FindPerfectTour = dynamic(() =>
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
+export async function generateMetadata({ params: { slug }, searchParams }) {
+  return {
+    title: "About us | About Around Egypt Tours ",
+    description:
+      "Around Egypt Tours is a young innovative travel company yet matured and experienced Founded in 2005 read more",
+  };
+}
 function AboutUs() {
   return (
     <div>

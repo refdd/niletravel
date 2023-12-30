@@ -5,6 +5,7 @@ import HeaderSingle from "@/components/headers/HeaderSingle";
 import SingelGallery from "@/components/gallery/SingelGallery";
 import ProductShcemas from "@/components/shcemas/ProductShcemas";
 import TouristDestinationShcemas from "@/components/shcemas/TouristDestinationShcemas";
+import ImagesShcemas from "@/components/shcemas/ImagesShcemas";
 const BottonInquire = dynamic(() =>
   import("@/components/buttons/ButtonInquire")
 );
@@ -14,7 +15,13 @@ const FormInquery = dynamic(() => import("@/components/form/FormInquery"));
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
-
+export async function generateMetadata({ params: { slug }, searchParams }) {
+  const singletour = await getData(`/tours/${slug}`);
+  return {
+    title: singletour?.data?.meta_title,
+    description: singletour?.data?.meta_description,
+  };
+}
 async function singelTour({ params: { slug, types } }) {
   const singletour = await getData(`/tours/${slug}`);
 
@@ -30,12 +37,14 @@ async function singelTour({ params: { slug, types } }) {
     duration,
     itineraries,
     image,
+    start_price,
   } = singletour?.data;
 
-  // console.log(params);
+  // console.log(singletour?.data);
   return (
     <div>
       <ProductShcemas title={title} image={image} description={description} />
+      <ImagesShcemas imageUrl={image} name={title} />
       <TouristDestinationShcemas
         title={title}
         image={image}
@@ -47,8 +56,8 @@ async function singelTour({ params: { slug, types } }) {
           <div className="md:col-span-4">
             <HeaderSingle
               titel={title}
-              location={`Città Che Visiterai : ${destinations} `}
-              reviews={"(1,186 Recensioni)"}
+              location={`cities : ${destinations} `}
+              reviews={`${start_price - 10} reviews`}
             />
             <SingelGallery gallery={gallery} />
 
@@ -65,7 +74,7 @@ async function singelTour({ params: { slug, types } }) {
           </div>
           <div className="md:col-span-2">
             <Suspense fallback={<>-----------</>}>
-              <FormInquery />
+              <FormInquery start_price={start_price} />
             </Suspense>
           </div>
         </div>

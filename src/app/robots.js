@@ -5,6 +5,6 @@ export default function robots() {
       allow: "/",
       disallow: "/admin",
     },
-    sitemap: "www.nilecruisez.com/sitemap.xml",
+    sitemap: "https://www.nilecruisez.com/sitemap.xml",
   };
 }

@@ -9,6 +9,13 @@ const ContactInfo = dynamic(() => import("@/components/contactus/ContactInfo"));
 const ExploreSection = dynamic(() =>
   import("@/components/explore/ExploreSection")
 );
+export async function generateMetadata({ params: { slug }, searchParams }) {
+  return {
+    title: "Contact us | Around Egypt",
+    description:
+      "Contact us now All you have to do is fill the below form and tell us what your dream",
+  };
+}
 function ContactUs() {
   return (
     <div>

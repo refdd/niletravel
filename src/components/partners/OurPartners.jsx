@@ -12,7 +12,7 @@ async function OurPartners() {
       <div className=" container mx-auto mt-20 px-4">
         <HeaderSections
           title="Our Partners"
-          partOne="Our Partners"
+          partOne="Our "
           partTwo="Partners"
           decs=""
         />
